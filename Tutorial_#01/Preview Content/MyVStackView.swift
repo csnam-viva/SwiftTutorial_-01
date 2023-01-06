@@ -7,6 +7,11 @@
 import SwiftUI
 
 struct MyVStackView: View{
+    @Binding
+    var isActivatedA: Bool
+    init(isActivated : Binding<Bool> = .constant(true)){
+        self._isActivatedA = isActivated  //프로퍼티 랩퍼가 적용된 녀석을 가져오기 위해는 변수 명 앞에 _언더스코어
+    }
     var body: some View{
         VStack{
             Text("1!")
@@ -16,7 +21,8 @@ struct MyVStackView: View{
             Text("3!")
                 .font(.system(size:60))
         }
-        .background(Color.red)
+        .background(self.isActivatedA ? Color.green : Color.red )
+        .padding(self.isActivatedA ? 10 : 0)
     }
 }
 

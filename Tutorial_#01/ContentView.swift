@@ -16,9 +16,10 @@ struct ContentView: View {
         NavigationView{
             VStack {
                 HStack {
-                    MyVStackView()
-                    MyVStackView()
-                    MyVStackView()
+                    MyVStackView(isActivated: $isActivated)
+                    MyVStackView(isActivated: $isActivated)
+                    MyVStackView(isActivated: $isActivated)
+                   
                     
                 } // hSack
                 .padding(isActivated ? 50: 10)
@@ -29,7 +30,7 @@ struct ContentView: View {
                     }
                     
                 }
-                NavigationLink(destination: MyTextView()){
+                NavigationLink(destination: MyTextView(isActivated: $isActivated)){
                     Text("navigation")
                         .fontWeight(.heavy)
                         .font( .system(size:40))
