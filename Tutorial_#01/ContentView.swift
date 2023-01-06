@@ -29,7 +29,7 @@ struct ContentView: View {
                     }
                     
                 }
-                NavigationLink(destination: Text("ffgg")){
+                NavigationLink(destination: MyTextView()){
                     Text("navigation")
                         .fontWeight(.heavy)
                         .font( .system(size:40))
